@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Expenses chart component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="balance-holder">
+      <div class="content">
+        <span>
+          My balance
+        </span>
+        <span class="balance">
+          $921.48
+        </span>
+      </div>
+      <div class="logo">
+        <img src="images/logo.svg" alt="logo">
+      </div>
+    </section>
+    <section class="spending">
+      <h1>
+        Spending - Last 7 days
+      </h1>
+      <div class="graph">
+        <span class="col">
+          <span class="day">mon</span>
+          <span class="graph-col" number=""></span>
+        </span>
+        <span class="col">
+          <span class="day">tue</span>
+          <span class="graph-col" number=""></span>
+        </span>
+        <span class="col highest">
+          <span class="day">wed</span>
+          <span class="graph-col" number=""></span>
+        </span>
+        <span class="col">
+          <span class="day">thu</span>
+          <span class="graph-col" number=""></span>
+        </span>
+        <span class="col">
+          <span class="day">fri</span>
+          <span class="graph-col" number=""></span>
+        </span>
+        <span class="col">
+          <span class="day">sat</span>
+          <span class="graph-col" number=""></span>
+        </span>
+        <span class="col">
+          <span class="day">sun</span>
+          <span class="graph-col" number=""></span>
+        </span>
+      </div>
+      <div class="month-info">
+        <div class="month-spending-holder">
+          <span>Total this month</span>
+          <span class="month-spending">
+            $478.33
+          </span>
+        </div>
+        <div class="compare-lmonth">
+          <span class="compare">
+            +2.4%
+          </span>
+          <span>
+            from last month
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

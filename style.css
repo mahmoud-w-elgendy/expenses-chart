@@ -1,0 +1,213 @@
+:root {
+    --main-transition: 0.3s;
+    --main-red: hsl(10, 79%, 65%);
+    --main-cyan: hsl(186, 34%, 60%);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+}
+body {
+    font-size: 18px;
+    background-color: hsl(27, 66%, 92%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+main .balance-holder {
+    background-color: var(--main-red);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main .balance-holder .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .balance-holder .content {
+    display: flex;
+    flex-direction: column;
+}
+main .balance-holder .content span:not(.balance) {
+    margin-bottom: 7.5px;
+    font-size: 0.95rem;
+}
+main .balance-holder .content span.balance {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+main section.spending {
+    background-color: white;
+}
+main section.spending h1 {
+    color: hsl(25, 47%, 15%);
+    margin-bottom: 60px
+}
+main section.spending .graph {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    column-gap: 15px;
+    position: relative;
+}
+main section.spending .graph::after {
+    content: "";
+    position: absolute;
+    background-color: hsl(27, 66%, 92%);
+    width: 100%;
+    height: 1px;
+    left: 0;
+    transform: translateY(-50%);
+}
+main section.spending .graph span.col .day {
+    display: flex;
+    align-items: flex-end;
+    font-size: 0.9rem;
+    color: hsl(28, 10%, 53%);
+}
+main section.spending .graph span.col .graph-col {
+    background-color: var(--main-red);
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+}
+main section.spending .graph span.col .graph-col::before {
+    content: attr(number);
+    position: absolute;
+    background-color: hsl(25, 47%, 15%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    left: 50%;
+    transform: translate(-50%, -40px);
+    opacity: 0;
+}
+main section.spending .graph span.col .graph-col.clicked::before  {
+    animation: opacity-up var(--main-transition) ease-out forwards;
+}
+main section.spending .graph span.col .graph-col.clicked {
+    animation: opacity-down var(--main-transition) linear forwards;
+}
+@keyframes opacity-down {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+@keyframes opacity-up {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+main section.spending .graph span.col.highest .graph-col {
+    background-color: var(--main-cyan);
+}
+main section.spending .month-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+main section.spending .month-info .month-spending-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+main section.spending .month-info {
+    margin-top: 60px;
+}
+main section.spending .month-info .month-spending-holder span:not(.month-spending) {
+    color: hsl(28, 10%, 53%);
+
+}
+main section.spending .month-info .month-spending-holder span.month-spending {
+    color: hsl(25, 47%, 15%);
+    font-size: 2.9rem;
+    font-weight: bold;
+}
+main section.spending .month-info  .compare-lmonth {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 5px;
+}
+main section.spending .month-info  .compare-lmonth .compare {
+    font-weight: bold;
+}
+main section.spending .month-info  .compare-lmonth span:not(.compare) {
+    color: hsl(28, 10%, 53%);
+}
+@media (max-width: 549px) {
+    main {
+        width: 100%;
+        padding: 15px;
+    }
+    main .balance-holder {
+        height: 95px;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 12px;
+    }
+    main section.spending {
+        border-radius: 10px;
+        padding: 30px 16px;
+    }
+    main section.spending .graph {
+        height: 175px;
+        margin-bottom: 20px;
+    }
+    main section.spending .graph span.col {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    main section.spending .graph::after  {
+        bottom: -20px;
+    }
+    main section.spending .graph span.col .graph-col::before {
+        height: 35px;
+        width: 60px;
+    }
+}
+@media (min-width: 550px){
+    main {
+        width: 535px;
+    }
+    main .balance-holder {
+        height: 120px;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 20px;
+    }
+    main section.spending {
+        border-radius: 15px;
+        padding: 36px;
+    }
+    main section.spending .graph {
+        height: 175px;
+        margin-bottom:30px ;
+    }
+    main section.spending .graph span.col {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    main section.spending .graph::after  {
+        bottom: -30px;
+    }
+    main section.spending .graph span.col .graph-col::before {
+        height: 35px;
+        width: 70px;
+    }
+}
